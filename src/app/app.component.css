@@ -1,0 +1,35 @@
+.box {
+    border: 1px solid orangered;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    font-family: calibri;
+    font-size: large;
+}
+
+div {
+    margin-bottom: 5px;
+}
+
+.active {
+    font-weight: 600;
+}
+
+.nav-bar, .login-name {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: calibri;
+    font-size: x-large;
+}
+
+
+a {
+    text-decoration: none;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

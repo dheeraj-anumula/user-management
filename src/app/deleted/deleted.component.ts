@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user/user.component';
 import { UserService } from 'src/app/user.service';
-import { DeletedUsersPipe } from '../deleted-users.pipe';
+import { DeletedUsersPipe } from './deleted-users.pipe';
 
 @Component({
   selector: 'app-deleted',

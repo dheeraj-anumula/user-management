@@ -8,17 +8,17 @@ import { User } from '../user/user.component';
 })
 export class UsersListComponent implements OnInit {
 
-  @Input('usersList') users:User[];
-  @Input('enableEdit') edit:boolean;  
+  @Input('usersList') users: User[];
+  @Input('enableEdit') edit: boolean;
 
-  userStyle:{width:string,"margin-bottom":string};
-  
+  userStyle: { width: string, "margin-bottom": string };
+
   constructor() { }
 
   ngOnInit(): void {
-    this.userStyle={
-      width:this.edit?'40%':'100%',
-      "margin-bottom":"10px"
+    this.userStyle = {
+      width: this.edit ? '40%' : '100%',
+      "margin-bottom": "10px"
     }
   }
 

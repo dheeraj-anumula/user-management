@@ -18,7 +18,6 @@ export class AppComponent {
       (response)=>{
         this.users=response as User[];
         console.log(this.users);
-        // this.activeUsersEmmitter.emit(this.activeUsers);
       },
       (error)=>{
         console.log('Error: Get Users API -',error);

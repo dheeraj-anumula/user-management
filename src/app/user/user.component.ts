@@ -11,34 +11,34 @@ import { Router } from '@angular/router';
 export class UserComponent implements OnInit {
 
   @Input('user')
-  user:User;
+  user: User;
 
   @Input('edit')
-  edit:boolean;
+  edit: boolean;
 
-  statusAction:string;
-  color:string;
+  statusAction: string;
+  color: string;
 
-  constructor(private userService:UserService, private router:Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.statusAction=this.user.isDeleted?"Activate":"Deactivate";
-    this.color=this.user.isDeleted?"red":"green";
+    this.statusAction = this.user.isDeleted ? "Activate" : "Deactivate";
+    this.color = this.user.isDeleted ? "red" : "green";
 
   }
 
-  toggleStatus(id:string){
+  toggleStatus(id: string) {
     console.log('toogleStatus');
-    this.user.isDeleted=!this.user.isDeleted;
+    this.user.isDeleted = !this.user.isDeleted;
     this.updateUser();
   }
 
-  getDetails(id:string){
+  getDetails(id: string) {
     this.router.navigate(['manage/details/', id]);
   }
-  
+
   updateUser() {
-     this.userService.updateUser(
+    this.userService.updateUser(
       {
         id: this.user.id,
         age: this.user.age,

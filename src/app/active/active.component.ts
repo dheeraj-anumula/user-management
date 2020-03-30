@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user/user.component';
 import { UserService } from 'src/app/user.service';
-import { ActiveUsersPipe } from '../active-users.pipe';
+import { ActiveUsersPipe } from './active-users.pipe';
 
 @Component({
   selector: 'app-active',

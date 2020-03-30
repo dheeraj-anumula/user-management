@@ -3,11 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserDetailsComponent } from './manage/user-details/user-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { UsersListModule } from './users-list/users-list.module';
 import { ActiveModule } from './active/active.module';
 import { DeletedModule } from './deleted/deleted.module';
 

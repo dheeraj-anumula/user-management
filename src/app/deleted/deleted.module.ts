@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DeletedComponent } from './deleted/deleted.component';
+import { DeletedComponent } from './deleted.component';
 import { DeletedUsersPipe } from './deleted-users.pipe';
 import { UsersListModule } from '../users-list/users-list.module';
 

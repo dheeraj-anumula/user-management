@@ -7,7 +7,7 @@ import { User } from '../user/user.component';
 export class ActiveUsersPipe implements PipeTransform {
 
   transform(users: User[]): User[] {
-    return users.filter(
+    return users?.filter(
       user => !user.isDeleted
     );
   }

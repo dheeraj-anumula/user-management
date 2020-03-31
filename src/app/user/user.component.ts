@@ -31,10 +31,15 @@ export class UserComponent implements OnInit {
     console.log('toogleStatus');
     this.user.isDeleted = !this.user.isDeleted;
     this.updateUser();
+    location.reload();
   }
 
   getDetails(id: string) {
     this.router.navigate(['manage/details/', id]);
+  }
+
+  editUser(id:string){
+    this.router.navigate(['manage/edit/',id]);
   }
 
   updateUser() {

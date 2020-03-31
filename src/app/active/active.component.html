@@ -1,3 +1,3 @@
 <div class="container">
-    <app-users-list [usersList]="activeUsers"></app-users-list>
+    <app-users-list [usersList]="((users|async))|activeUsers"></app-users-list>
 </div>

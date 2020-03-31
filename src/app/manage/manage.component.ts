@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/user/user.component';
 import { UserService } from 'src/app/user.service';
+import { EventEmitter } from 'events';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-manage',
@@ -9,24 +12,17 @@ import { UserService } from 'src/app/user.service';
 })
 export class ManageComponent implements OnInit {
 
-  users:User[];
+  users:Observable<User[]>;
+  
   edit:boolean=true;
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private router:Router) { }
 
   ngOnInit(): void {
-  
-    this.userService.getUsers().subscribe(
-      (response)=>{
-        this.users=response as User[];
-        console.log(this.users);
-      },
-      (error)=>{
-        console.log('Error: Get Users API -',error);
-      },
-      ()=>{
-        console.log('Complete: Get Users API');
-      }
-    )
+    this.users=this.userService.getUsers() as Observable<User[]>;
+  }
+
+  createUser(){
+    this.router.navigate(['manage/create'])
   }
 
 }

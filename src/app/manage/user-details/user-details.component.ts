@@ -12,15 +12,17 @@ export class UserDetailsComponent implements OnInit {
 
   user:User;
   status:string;
-  constructor(private userService:UserService,private route: ActivatedRoute) { }
+  lastUpdated;
+  constructor(private userService:UserService,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.route.params.subscribe(
+    this.activatedRoute.params.subscribe(
       (param) => {
         this.userService.getUser(param['id']).subscribe(
-          (result) => {
+          (result:{age,id,login,firstName,lastName,password,updatedAt}) => {
             this.user = result as User;
+            this.lastUpdated=result.updatedAt;
             this.status= this.user.isDeleted?"Deleted":"Active";
             console.log('Result: Get User API - ', result);
           },

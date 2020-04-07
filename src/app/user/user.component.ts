@@ -24,11 +24,9 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.statusAction = this.user.isDeleted ? "Activate" : "Deactivate";
     this.color = this.user.isDeleted ? "red" : "green";
-
   }
 
   toggleStatus(id: string) {
-    console.log('toogleStatus');
     this.user.isDeleted = !this.user.isDeleted;
     this.updateUser();
     location.reload();
@@ -38,8 +36,8 @@ export class UserComponent implements OnInit {
     this.router.navigate(['manage/details/', id]);
   }
 
-  editUser(id:string){
-    this.router.navigate(['manage/edit/',id]);
+  editUser(id: string) {
+    this.router.navigate(['manage/edit/', id]);
   }
 
   updateUser() {

@@ -12,16 +12,16 @@ import { Observable } from 'rxjs';
 })
 export class ManageComponent implements OnInit {
 
-  users:Observable<User[]>;
-  
-  edit:boolean=true;
-  constructor(private userService:UserService, private router:Router) { }
+  users: Observable<User[]>;
+
+  edit: boolean = true;
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.users=this.userService.getUsers() as Observable<User[]>;
+    this.users = this.userService.getUsers() as Observable<User[]>;
   }
 
-  createUser(){
+  createUser() {
     this.router.navigate(['manage/create'])
   }
 

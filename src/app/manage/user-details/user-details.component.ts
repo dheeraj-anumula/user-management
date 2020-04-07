@@ -10,20 +10,20 @@ import { User } from '../../user/user.component';
 })
 export class UserDetailsComponent implements OnInit {
 
-  user:User;
-  status:string;
-  lastUpdated;
-  constructor(private userService:UserService,private activatedRoute: ActivatedRoute) { }
+  user: User;
+  status: string;
+  lastUpdated: string;
+  constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
 
     this.activatedRoute.params.subscribe(
       (param) => {
         this.userService.getUser(param['id']).subscribe(
-          (result:{age,id,login,firstName,lastName,password,updatedAt}) => {
+          (result: { age, id, login, firstName, lastName, password, updatedAt }) => {
+            this.lastUpdated = result.updatedAt;
             this.user = result as User;
-            this.lastUpdated=result.updatedAt;
-            this.status= this.user.isDeleted?"Deleted":"Active";
+            this.status = this.user.isDeleted ? "Deleted" : "Active";
             console.log('Result: Get User API - ', result);
           },
           (error) => {

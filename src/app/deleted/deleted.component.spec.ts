@@ -16,9 +16,6 @@ describe('DeletedComponent', () => {
     { firstName: "", lastName: "", age: 20, login: "user", password: "Passw12", isDeleted: false }
   ];
   const getUsersSpy = userServiceSpy.getUsers.and.returnValue(of(users));
-  let deletedUsers = [
-    { firstName: "", lastName: "", age: 20, login: "user", password: "Passw12", isDeleted: true }
-  ];
 
   let userService: UserService;
 
@@ -49,7 +46,7 @@ describe('DeletedComponent', () => {
   it('should call getUsers of UserService on ngOnInit', () => {
     component.ngOnInit();
     expect(userService.getUsers).toHaveBeenCalled();
-    expect(component.deletedUsers).toEqual(deletedUsers);
+    expect(component.users).toEqual(users);
   })
 
 });

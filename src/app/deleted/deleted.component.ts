@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user/user.component';
 import { UserService } from 'src/app/user.service';
-import { DeletedUsersPipe } from './deleted-users.pipe';
 
 @Component({
   selector: 'app-deleted',
   templateUrl: './deleted.component.html',
-  styleUrls: ['./deleted.component.css'],
-  providers: [DeletedUsersPipe]
+  styleUrls: ['./deleted.component.css']
 })
 export class DeletedComponent implements OnInit {
 
-  deletedUsers: User[];
+  users: User[];
 
-  constructor(private userService: UserService, private deletedUsersPipe: DeletedUsersPipe) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
 
     this.userService.getUsers().subscribe(
       (response) => {
-        this.deletedUsers = this.deletedUsersPipe.transform(response as User[]);
+        this.users = response as User[];
       },
       (error) => {
         console.log('Error: Get Users API -', error);

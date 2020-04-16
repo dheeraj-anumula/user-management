@@ -1,0 +1,28 @@
+<div class="card mb-3" 
+    [ngClass]='{"border-danger":color=="red","border-success":color=="green"}'>
+    
+    <div class="card-body">
+            <h5 class="card-title ">{{(user.firstName+' '+user.lastName)|titlecase}}</h5>
+            <button 
+                class="btn d-inline float-right" 
+                [ngClass]='{"btn-danger":color=="red","btn-success":color=="green"}'
+                *ngIf="!edit"
+                (click)="toggleStatus(user.id)">
+                    {{statusAction}}
+            </button>
+            
+            <button 
+                class="btn btn-warning d-inline" 
+                *ngIf="edit"
+                (click)="editUser(user.id)">
+                    Edit
+            </button>
+            
+            <button 
+                class="btn btn-primary d-inline float-right" 
+                *ngIf="edit"
+                (click)="getDetails(user.id)">
+                    Details
+            </button>
+    </div>
+</div>

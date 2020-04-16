@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-body border">
+        <h5 class="card-title ">{{(user?.firstName+' '+user?.lastName)|titlecase}}</h5>
+        <p [style.color]="user?.isDeleted?'red':'green'">{{status}}</p>
+        <dl class="row">
+            <dd class="col-sm-6">Login Id</dd>
+            <dd class="col-sm-6">{{user?.login}}</dd>
+        </dl>
+        <dl class="row">
+            <dd class="col-sm-6">First Name</dd>
+            <dd class="col-sm-6">{{user?.firstName}}</dd>
+        </dl>
+        <dl class="row">
+            <dd class="col-sm-6">Last Name</dd>
+            <dd class="col-sm-6">{{user?.lastName}}</dd>
+        </dl>
+        <dl class="row">
+            <dd class="col-sm-6">Age</dd>
+            <dd class="col-sm-6">{{user?.age}}</dd>
+        </dl>
+        <dl class="row font-italic">
+            <dd class="col-sm-6">Last Updated</dd>
+            <dd class="col-sm-6">{{lastUpdated|date:'mediumDate'}}</dd>
+        </dl>
+    </div>
+</div>

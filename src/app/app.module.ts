@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { UserDetailsComponent } from './manage/user-details/user-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { ActiveModule } from './active/active.module';
-import { DeletedModule } from './deleted/deleted.module';
+import { UsersComponent } from './users/users.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,

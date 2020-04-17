@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DeletedComponent } from './deleted/deleted.component';
-import { ActiveComponent } from './active/active.component';
 import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'active',component:ActiveComponent},
-  {path:'deleted',component:DeletedComponent},
+  {path:'active',component:UsersComponent, data:{isDeleted:false}},
+  {path:'deleted',component:UsersComponent, data:{isDeleted:true}},
   {
     path:'manage',
     loadChildren:()=>import('./manage/manage.module').then(

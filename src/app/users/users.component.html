@@ -1,0 +1,3 @@
+<div class="container">
+    <app-users-list [usersList]="((users|async))|filterUsers:(del|async).isDeleted"></app-users-list>
+</div>

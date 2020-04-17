@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DeletedComponent } from './deleted.component';
-import { DeletedUsersPipe } from './deleted-users.pipe';
+import { FilterUsersPipe } from './filter-users.pipe';
 import { UsersListModule } from '../users-list/users-list.module';
+import { UsersComponent } from './users.component';
+
+
 
 @NgModule({
-  declarations: [DeletedComponent, DeletedUsersPipe],
+  declarations: [UsersComponent,FilterUsersPipe],
   imports: [
     CommonModule,
     UsersListModule
   ],
-  exports:[DeletedComponent]
+  exports:[UsersComponent]
 })
-export class DeletedModule { }
+export class UsersModule { }
